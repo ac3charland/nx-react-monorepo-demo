@@ -1,9 +1,9 @@
-import NxWelcome from './nx-welcome';
+import { Header } from '@components';
 
 export function App() {
   return (
     <div>
-      <NxWelcome title="nx-react-monorepo-demo" />
+      <Header />
     </div>
   );
 }

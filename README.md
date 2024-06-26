@@ -14,6 +14,10 @@ comes with a LSP for Vim users.
 
 Run `npx nx serve nx-react-monorepo-demo` to start the development server. Happy coding!
 
+## Run Cypress tests
+
+The `nx-react-monorepo-demo-e2e` app contains the Cypress tests for `nx-react-monorepo-demo`. To run the tests in the command line, run `npx nx e2e nx-react-monorepo-demo-e2e`. To open the Cypress UI and run the tests there, run `npx nx cypress-open nx-react-monorepo-demo-e2e` (the `--watch` flag isn't available in Cypress 13+)
+
 ## Build for production
 
 Run `npx nx build nx-react-monorepo-demo` to build the application. The build artifacts are stored in the output directory (e.g. `dist/` or `build/`), ready to be deployed.
@@ -39,6 +43,29 @@ npx nx run-many -t <target1> <target2> -p <proj1> <proj2>
 ```
 
 Targets can be defined in the `package.json` or `projects.json`. Learn more [in the docs](https://nx.dev/features/run-tasks).
+
+## Using the Nx Console VSCode Extension
+
+In the VSCode extensions tab, install the `Nx Console` extension by `nrwl`.
+
+## Using the extension to generate code
+
+(You may want to collapse the "Nx Cloud" tab in the extension to see "Common NX Commands")
+
+### Generating React components in libs
+
+1. Under "Common Nx Commands" select Generate (UI)
+2. Select `@nx/react - library` from the dropdown`
+2. Under "Name" enter `components`
+    - This will generate a `components.tsx` and `componetns.spec.tsx` file that will be deleted. 
+    - But we still want the library to be accessbile as `@components` in the `apps/` directory, hence the name
+3. Under "Directory" enter `libs/components/`
+4. In `tsconfig.base.json` rename the path from `@[project-name]/components` to `@components` or whatever you'd like to use for importing
+5. Set up the exports/folder structure however you like, but I prefer to keep all reusable components in one library to reduce the need for regenerating libs. You could also organize by Atomic Design or other paradigms.
+6. Under `libs/components/src/lib/` create a folders for each reusable component. I like to have each folder have an `index.ts` file with all the named exports for the component, so the top level `components/index.ts` file can have a line like: `export * from './lib/[component-folder]` for each component
+7. If using Tailwind:
+   - Note that as of the writing of these docs, if using TailWind the generated component will have a line like `import styled from 'tailwind'`. Can't figure out how to fix this or if it's an error, so I've deleted it.
+   - You WON'T need to run a Tailwind setup command for the `components/` directory by using the Nx extension. Each app's `tailwind.config.js` setup file should automatically detect the `libs/` the app requires and purge unused classes accordingly. See [this guide](https://blog.nrwl.io/setup-next-js-to-use-tailwind-with-nx-849b7e21d8d0#bec0).
 
 ## Set up CI!
 
