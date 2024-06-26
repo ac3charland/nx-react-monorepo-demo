@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components should match snapshot 1`] = `
+<body>
+  <div>
+    <div
+      class="flex flex-col justify-center items-center"
+    >
+      <h1
+        class="bg-indigo-500 text-red-300 w-96 rounded p-4 mt-4 shadow-md shadow-neutral-400"
+      >
+        Welcome to Nx!
+      </h1>
+    </div>
+  </div>
+</body>
+`;
