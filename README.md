@@ -74,6 +74,14 @@ In the VSCode extensions tab, install the `Nx Console` extension by `nrwl`.
 3. At the time of writing, the above plugin installed an old version of docusaurus with an outdated React depenency, which caused a conflict with nx when running `npm install`. Interest in the plugin on npm is dwindling so it's uncertain if this will be updated in the future. Updating the versions of `@docusaurus/core`, `@docusaurus/preset-classic`, and `@docusaurus/module-type-aliases` (or any other docusaurus-related modules) to the latest version helped resolve this.
 4. Run with `npx nx serve docs`
 
+
+### Creating a typescript-only library (non-frontend)
+
+Useful for a `utils/`, `constants/` or `services/` directory.
+
+1. Using the VSCode extension, run `Generate (UI)` > `@nx/js - library`
+2. For usage exclusively by frontend apps within the monorepo, select "none" for the budnler. Set the directory to "libs/[name]" and the import path to "@[name]"
+
 ## Set up CI!
 
 Nx comes with local caching already built-in (check your `nx.json`). On CI you might want to go a step further.
