@@ -67,6 +67,12 @@ In the VSCode extensions tab, install the `Nx Console` extension by `nrwl`.
    - Note that as of the writing of these docs, if using TailWind the generated component will have a line like `import styled from 'tailwind'`. Can't figure out how to fix this or if it's an error, so I've deleted it.
    - You WON'T need to run a Tailwind setup command for the `components/` directory by using the Nx extension. Each app's `tailwind.config.js` setup file should automatically detect the `libs/` the app requires and purge unused classes accordingly. See [this guide](https://blog.nrwl.io/setup-next-js-to-use-tailwind-with-nx-849b7e21d8d0#bec0).
 
+### Creating a documentation app with Docusaurus
+
+1. Install the [community plugin for docusaurus](https://github.com/ZachJW34/nx-plus/tree/master/libs/docusaurus) with `npm i -D @nx-plus/docusaurus`
+2. Generate the app via command line with `npx nx generate @nx-plus/docusaurus:app docs`
+3. Run with `npx nx serve docs`
+
 ## Set up CI!
 
 Nx comes with local caching already built-in (check your `nx.json`). On CI you might want to go a step further.
