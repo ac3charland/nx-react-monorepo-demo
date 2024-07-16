@@ -80,7 +80,7 @@ In the VSCode extensions tab, install the `Nx Console` extension by `nrwl`.
 Useful for a `utils/`, `constants/` or `services/` directory.
 
 1. Using the VSCode extension, run `Generate (UI)` > `@nx/js - library`
-2. For usage exclusively by frontend apps within the monorepo, select "none" for the budnler. Set the directory to "libs/[name]" and the import path to "@[name]"
+2. For usage exclusively by frontend apps within the monorepo, select "none" for the bundler. Set the directory to "libs/[name]" and the import path to "@[name]"
 
 ## Set up CI!
 
