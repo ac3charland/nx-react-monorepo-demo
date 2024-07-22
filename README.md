@@ -55,7 +55,7 @@ In the VSCode extensions tab, install the `Nx Console` extension by `nrwl`.
 ### Generating React components in libs
 
 1. Under "Common Nx Commands" select Generate (UI)
-2. Select `@nx/react - library` from the dropdown`
+2. Select `@nx/react - library` from the dropdown
 2. Under "Name" enter `components`
     - This will generate a `components.tsx` and `componetns.spec.tsx` file that will be deleted. 
     - But we still want the library to be accessbile as `@components` in the `apps/` directory, hence the name
