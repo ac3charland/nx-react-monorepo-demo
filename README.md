@@ -16,7 +16,7 @@ Run `npx nx serve nx-react-monorepo-demo` to start the development server. Happy
 
 ## Run Cypress tests
 
-The `nx-react-monorepo-demo-e2e` app contains the Cypress tests for `nx-react-monorepo-demo`. To run the tests in the command line, run `npx nx e2e nx-react-monorepo-demo-e2e`. To open the Cypress UI and run the tests there, run `npx nx cypress-open nx-react-monorepo-demo-e2e` (the `--watch` flag isn't available in Cypress 13+)
+The `nx-react-monorepo-demo-e2e` app contains the Cypress tests for `nx-react-monorepo-demo`. To run the tests in the command line, run `npx nx e2e nx-react-monorepo-demo-e2e`. To open the Cypress UI and run the tests there, run `npx nx open-cypress nx-react-monorepo-demo-e2e` (the `--watch` flag isn't available in Cypress 13+)
 
 ## Build for production
 
