@@ -12,6 +12,14 @@
       "options": {
         "jestConfig": "libs/components/jest.config.ts"
       }
+    },
+    "tsc": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["tsc -p tsconfig.lib.json --noEmit"],
+        "cwd": "{projectRoot}",
+        "forwardAllArgs": false
+      }
     }
   }
 }
